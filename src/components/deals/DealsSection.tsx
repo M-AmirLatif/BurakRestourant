@@ -98,19 +98,32 @@ export function DealsSection() {
                 Experience Kasur&apos;s most luxurious 1-person buffet dinner spread! Enjoy a massive selection of Chinese, Desi Handi, Karahi, Charcoal Bar B.Q, mini burgers, spring rolls, chilled drinks, and refreshing desserts.
               </p>
 
-              {/* Items List Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
-                {heroDeal.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 text-xs sm:text-sm text-emerald-100/90 font-medium"
-                  >
-                    <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
-                      <Check className="w-2.5 h-2.5" />
+              {/* Items List Grid - Formal Categorized Breakdown */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                {heroDeal.items.map((item, index) => {
+                  const parts = item.split(': ');
+                  const hasPrefix = parts.length > 1;
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-start gap-2.5 text-xs sm:text-sm text-emerald-100/90 font-medium bg-black/25 p-2.5 rounded-xl border border-brand-green/30"
+                    >
+                      <div className="w-4 h-4 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-400/40 mt-0.5">
+                        <Check className="w-2.5 h-2.5" />
+                      </div>
+                      <div className="leading-snug">
+                        {hasPrefix ? (
+                          <>
+                            <span className="font-bold text-amber-300 tracking-wide block sm:inline sm:mr-1.5">{parts[0]}:</span>
+                            <span className="text-emerald-100/95">{parts.slice(1).join(': ')}</span>
+                          </>
+                        ) : (
+                          <span>{item}</span>
+                        )}
+                      </div>
                     </div>
-                    <span>{item}</span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* CTA Row */}

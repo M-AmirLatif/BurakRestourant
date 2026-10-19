@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "BURAK Crispy Juicy Legendary",
     images: [
       {
-        url: "/images/burak_cover.png",
+        url: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=80",
         width: 1200,
         height: 630,
         alt: "BURAK Crispy Juicy Legendary Kasur",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BURAK Crispy Juicy Legendary Kasur",
     description: "Famous Injected Broast, Pizzas, Burgers & Bar B.Q in Kasur. Call 0322 1711222.",
-    images: ["/images/burak_cover.png"],
+    images: ["https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=80"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -59,7 +59,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": BUSINESS_INFO.name,
-  "image": "/images/burak_cover.png",
+  "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=80",
   "telephone": "+923221711222",
   "servesCuisine": ["Fast Food", "Pizza", "Broast", "Burgers", "Pakistani Food", "Barbecue", "Mandi Pulao"],
   "priceRange": "PKR 1000 - 2000",

@@ -34,7 +34,7 @@ const QUICK_ADD_FAVORITES = [
     price: 650,
     category: "broast",
     badge: "Bestseller",
-    image: "/images/menu_broast.png",
+    image: "https://images.unsplash.com/photo-1562967914-608f82629710?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "pizza-chicken-tikka-S",
@@ -45,7 +45,7 @@ const QUICK_ADD_FAVORITES = [
     price: 650,
     category: "pizza",
     badge: "Top Pizza",
-    image: "/images/menu_pizza.png",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "burger-zinger",
@@ -54,7 +54,7 @@ const QUICK_ADD_FAVORITES = [
     price: 450,
     category: "burger",
     badge: "Kasur Crisp",
-    image: "/images/menu_burger.png",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "fries-loaded",
@@ -63,7 +63,7 @@ const QUICK_ADD_FAVORITES = [
     price: 550,
     category: "fries",
     badge: "Loaded Dip",
-    image: "/images/menu_fries.png",
+    image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=800&auto=format&fit=crop&q=80",
   },
 ];
 

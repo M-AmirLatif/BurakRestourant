@@ -33,7 +33,7 @@ const HERO_FEATURED_DISHES = [
     tagline: "Deep fried spicy injected chicken with crunchy crust, fries & garlic sauce",
     price: "From Rs 650",
     badge: "Crispy & Juicy",
-    image: "/images/menu_broast.png",
+    image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=900&auto=format&fit=crop&q=80",
     prepTime: "15-20 mins",
   },
   {
@@ -44,7 +44,7 @@ const HERO_FEATURED_DISHES = [
     tagline: "Grilled chicken, seekh kabab, olives, mushrooms, jalapenos & sweet corn",
     price: "From Rs 750",
     badge: "Buraq Special",
-    image: "/images/menu_pizza.png",
+    image: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=900&auto=format&fit=crop&q=80",
     prepTime: "20 mins",
   },
   {
@@ -55,7 +55,7 @@ const HERO_FEATURED_DISHES = [
     tagline: "Double crispy chicken zinger fillets stacked with cheese slices & spicy sauce",
     price: "Only Rs 700",
     badge: "Double Monster",
-    image: "/images/menu_burger.png",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&auto=format&fit=crop&q=80",
     prepTime: "15 mins",
   },
   {
@@ -66,7 +66,7 @@ const HERO_FEATURED_DISHES = [
     tagline: "Tikka boti, malai boti, chicken & beef kababs, sheesh tok & fresh chutney",
     price: "Only Rs 1,700",
     badge: "Grand Desi Feast",
-    image: "/images/menu_bbq.png",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&auto=format&fit=crop&q=80",
     prepTime: "20-25 mins",
   },
 ];
