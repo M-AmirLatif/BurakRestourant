@@ -32,7 +32,7 @@ export function Navbar() {
     { label: "Menu", href: "#menu" },
     { label: "Deals & Buffet", href: "#deals", badge: "Hot" },
     { label: "Story", href: "#about" },
-    { label: "Ambiance", href: "#gallery" },
+    { label: "Sitting Area", href: "#ambiance" },
     { label: "Location", href: "#contact" },
   ];
 

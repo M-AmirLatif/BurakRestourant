@@ -119,7 +119,7 @@ export function BrandStrip() {
             <div className="lg:col-span-5 relative">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-amber-400/40 shadow-2xl group">
                 <SafeImage
-                  src="/images/ambiance_2.jpg"
+                  src="/images/ambiance_neon_wall.jpg"
                   alt="BURAK Restaurant Kasur Modern Interior Ambiance"
                   category="ambiance"
                   fill

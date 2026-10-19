@@ -114,15 +114,24 @@ export function HeroSection() {
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
             
             {/* Live Pulser Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-forest-light/70 border border-amber-400/40 shadow-lg shadow-black/30 backdrop-blur-sm">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
-              </span>
-              <span className="font-display font-bold text-xs uppercase tracking-wider text-amber-300">
-                Near Railway Crossing (Phatak), Kasur • Dine-In & Delivery
-              </span>
-              <StarMotif className="w-3.5 h-3.5 text-brand-yellow hidden sm:inline" />
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-forest-light/70 border border-amber-400/40 shadow-lg shadow-black/30 backdrop-blur-sm">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+                </span>
+                <span className="font-display font-bold text-xs uppercase tracking-wider text-amber-300">
+                  Near Railway Crossing (Phatak), Kasur
+                </span>
+              </div>
+
+              <a
+                href="#ambiance"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-400/40 text-emerald-300 text-xs font-bold transition-all shadow-md hover:scale-105"
+              >
+                <span>🌿 View Sitting Area & Neon Wall</span>
+                <ArrowRight className="w-3 h-3 text-amber-400" />
+              </a>
             </div>
 
             {/* Main Headline with Typewriter Animation */}

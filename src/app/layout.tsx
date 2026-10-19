@@ -11,6 +11,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://burak-restaurant.vercel.app"),
   title: "BURAK Crispy Juicy Legendary | Kasur, Pakistan",
   description:
     "BURAK Crispy Juicy Legendary located near Railway Crossing (Phatak), Kasur. Signature Injected Broast, Wood-fired Pizzas, Beef Smash Burgers, Mandi Pulao, and Bar B.Q. Dine-in, Takeaway & Free Delivery on Rs 1,000+. Call 0322 1711222.",
@@ -30,15 +31,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BURAK Crispy Juicy Legendary — Kasur",
     description:
-      "Kasur's celebrated dining destination near Railway Crossing (Phatak). Modern ambiance, Injected Broast, Pizzas, Burgers & Bar B.Q. Delivery: 0322 1711222.",
-    url: "https://burakrestaurant.pk",
+      "Kasur's celebrated dining destination near Railway Crossing (Phatak). Modern ambiance, Injected Broast, Pizzas, Burgers & Bar B.Q. Call / WhatsApp: 0322 1711222.",
+    url: "https://burak-restaurant.vercel.app",
     siteName: "BURAK Crispy Juicy Legendary",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=80",
+        url: "/images/burak_whatsapp_og.jpg",
+        secureUrl: "https://burak-restaurant.vercel.app/images/burak_whatsapp_og.jpg",
         width: 1200,
         height: 630,
-        alt: "BURAK Crispy Juicy Legendary Kasur",
+        alt: "BURAK Crispy Juicy Legendary Restaurant Kasur",
+        type: "image/jpeg",
       },
     ],
     locale: "en_PK",
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BURAK Crispy Juicy Legendary Kasur",
     description: "Famous Injected Broast, Pizzas, Burgers & Bar B.Q in Kasur. Call 0322 1711222.",
-    images: ["https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=80"],
+    images: ["https://burak-restaurant.vercel.app/images/burak_whatsapp_og.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -112,6 +115,19 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* WhatsApp & Social OpenGraph Crawlers explicit tags */}
+        <meta property="og:title" content="BURAK Crispy Juicy Legendary | Restaurant in Kasur" />
+        <meta property="og:description" content="Kasur's celebrated dining destination near Railway Crossing (Phatak). Famous Injected Broast, Wood-Fired Pizzas, Smash Burgers & Bar B.Q. Call / WhatsApp: 0322 1711222." />
+        <meta property="og:image" content="https://burak-restaurant.vercel.app/images/burak_whatsapp_og.jpg" />
+        <meta property="og:image:secure_url" content="https://burak-restaurant.vercel.app/images/burak_whatsapp_og.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://burak-restaurant.vercel.app" />
+        <meta property="og:site_name" content="BURAK Crispy Juicy Legendary" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://burak-restaurant.vercel.app/images/burak_whatsapp_og.jpg" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
