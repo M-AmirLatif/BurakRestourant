@@ -125,7 +125,7 @@ export function Footer() {
 
         {/* Bottom copyright line */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-200/60 gap-4">
-          <p>© {new Date().getFullYear()} BURAK Crispy Juicy Legendary. All rights reserved.</p>
+          <p>© 2026 BURAK Crispy Juicy Legendary. All rights reserved.</p>
           <p className="flex items-center gap-1">
             <span>Crafted with</span>
             <Heart className="w-3.5 h-3.5 text-red-500 fill-current inline" />
