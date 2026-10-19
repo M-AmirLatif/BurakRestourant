@@ -54,7 +54,14 @@ export const metadata: Metadata = {
     images: ["https://burak-restaurant.vercel.app/images/burak_whatsapp_og.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
 };
 
@@ -62,7 +69,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": BUSINESS_INFO.name,
-  "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=80",
+  "image": "https://burak-restaurant.vercel.app/icon.png",
   "telephone": "+923221711222",
   "servesCuisine": ["Fast Food", "Pizza", "Broast", "Burgers", "Pakistani Food", "Barbecue", "Mandi Pulao"],
   "priceRange": "PKR 1000 - 2000",
@@ -125,8 +132,11 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://burak-restaurant.vercel.app" />
         <meta property="og:site_name" content="BURAK Crispy Juicy Legendary" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://burak-restaurant.vercel.app/images/burak_whatsapp_og.jpg" />
+        {/* Browser Favicon & Touch Icons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         <script
           type="application/ld+json"

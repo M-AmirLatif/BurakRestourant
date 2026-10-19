@@ -75,20 +75,15 @@ export function BurakLogoBadge({
 
   return (
     <div className="flex items-center gap-2.5 sm:gap-3 group select-none">
-      {/* Brand Emblem */}
+      {/* Brand Emblem - Official Circular BURAK Logo */}
       <div
-        className={`relative ${sizeClasses} rounded-full bg-gradient-to-tr from-red-600 via-amber-500 to-yellow-400 p-0.5 shadow-md shadow-black/50 ring-1 ring-amber-400/40 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0`}
+        className={`relative ${sizeClasses} rounded-full overflow-hidden shadow-lg shadow-black/60 ring-2 ring-amber-400/60 transition-transform duration-300 group-hover:scale-105 shrink-0 bg-neutral-950`}
       >
-        {/* Outer decorative ring */}
-        <div className="absolute inset-0 rounded-full border border-dashed border-amber-300/40" />
-        
-        {/* Inner solid badge with Flame & Skillet Emblem */}
-        <div className="w-full h-full rounded-full bg-brand-forest-dark flex items-center justify-center border border-amber-400/40 p-2">
-          <svg viewBox="0 0 24 24" className="w-full h-full text-amber-400" fill="currentColor">
-            {/* Wok/Pan flame icon */}
-            <path d="M19.4 13c-.3-2.1-1.7-3.9-3.4-4.8.1.9-.1 1.9-.7 2.6-.7.8-1.7 1.2-2.3 2.1-.8 1.1-.7 2.6.2 3.6.9 1 2.4 1.2 3.6.5 1.5-.9 2.4-2.5 2.6-4zm-8.8-9C9 6.2 9.5 8.6 8.5 10.8c-.5 1-1.3 1.8-1.6 2.9-.6 1.9.1 4.1 1.6 5.3 1.9 1.5 4.6 1.4 6.4-.3-1.2-.2-2.4-.8-3.1-1.8-.8-1.1-.9-2.6-.3-3.8.5-1.1 1.6-2 1.8-3.2.3-1.8-.7-3.6-2.7-5.9zM2 20h20v2H2z" />
-          </svg>
-        </div>
+        <img
+          src="/icon.png"
+          alt="BURAK Crispy Juicy Legendary"
+          className="w-full h-full object-contain"
+        />
       </div>
 
       {/* Brand Wordmark & Tagline */}
