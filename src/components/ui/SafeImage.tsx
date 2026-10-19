@@ -25,6 +25,12 @@ export function SafeImage({
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  // Reset error and load state if src changes
+  React.useEffect(() => {
+    setHasError(false);
+    setIsLoaded(false);
+  }, [src]);
+
   // Derive normalized category for fallback illustration
   const catKey = (category || "").toLowerCase();
 
