@@ -16,7 +16,7 @@ export function StickyMobileActionBar() {
         <a
           href={`tel:${BUSINESS_INFO.phone}`}
           className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-full bg-brand-forest-light/90 hover:bg-brand-forest-light text-amber-300 font-display font-bold text-xs border border-amber-400/30 transition-transform active:scale-95"
-          aria-label="Direct Phone Call to Salato Food Hub"
+          aria-label="Direct Phone Call to BURAK Restaurant"
         >
           <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
           <span className="truncate">Call</span>
@@ -25,7 +25,7 @@ export function StickyMobileActionBar() {
         {/* WhatsApp Button */}
         <a
           href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(
-            "Assalam o Alaikum! I want to order from Salato Food Hub."
+            "Assalam o Alaikum! I want to order from BURAK Restaurant Kasur."
           )}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export function StickyMobileActionBar() {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-full bg-gradient-to-r from-brand-pink to-brand-pink-dark hover:from-brand-pink-dark hover:to-brand-pink text-white font-display font-black text-xs shadow-lg shadow-brand-pink/30 cursor-pointer transition-transform active:scale-95"
+          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-full bg-gradient-to-r from-red-600 to-amber-500 hover:opacity-95 text-white font-display font-black text-xs shadow-lg shadow-red-950/40 cursor-pointer transition-transform active:scale-95"
           aria-label="Open Basket"
         >
           <ShoppingBag className="w-3.5 h-3.5 shrink-0" />

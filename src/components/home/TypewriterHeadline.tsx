@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 
-const LINE1_TEXT = "Delightful Taste";
+const LINE1_TEXT = "Crispy, Juicy";
 
 const PHRASES = [
-  "With Deep Trust.",
-  "Fired Fresh in Kasur.",
-  "Open Late Till 4 AM.",
-  "With Deep Trust.",
+  "Legendary Food.",
+  "Near Railway Phatak, Kasur.",
+  "Dine-in, Takeaway & Delivery.",
+  "Legendary Food.",
 ];
 
 export function TypewriterHeadline() {
@@ -28,7 +28,7 @@ export function TypewriterHeadline() {
   useEffect(() => {
     if (!isMounted) return;
 
-    // Phase 1: Typing Line 1 ("Delightful Taste")
+    // Phase 1: Typing Line 1 ("Crispy, Juicy")
     if (isTypingLine1) {
       if (line1.length < LINE1_TEXT.length) {
         const timeout = setTimeout(() => {
@@ -62,27 +62,28 @@ export function TypewriterHeadline() {
         return () => clearTimeout(timeout);
       }
     } else {
-      // Backspacing
+      // Backward deleting
       if (line2.length > 0) {
         const timeout = setTimeout(() => {
           setLine2(line2.slice(0, -1));
-        }, 28);
+        }, 25);
         return () => clearTimeout(timeout);
       } else {
-        // Complete erase, move to next tagline phrase
+        // Finished deleting, move to next phrase
         setIsDeleting(false);
         setPhraseIndex((prev) => (prev + 1) % PHRASES.length);
       }
     }
-  }, [isMounted, line1, line2, isTypingLine1, isDeleting, phraseIndex]);
+  }, [isMounted, isTypingLine1, line1, line2, isDeleting, phraseIndex]);
 
-  // SSR Initial Render for SEO & zero flicker
+  // Initial SSR fallback
   if (!isMounted) {
     return (
-      <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white leading-[1.08]">
-        {LINE1_TEXT} <br />
-        <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-brand-yellow to-brand-pink">
-          With Deep Trust.
+      <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.98] text-white">
+        Crispy, Juicy
+        <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-yellow-300">
+          Legendary Food.
         </span>
       </h1>
     );
@@ -90,36 +91,28 @@ export function TypewriterHeadline() {
 
   return (
     <h1
-      className="font-display font-black text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white leading-[1.08] min-h-[2.2em] sm:min-h-[2.15em]"
-      aria-label="Delightful Taste With Deep Trust."
+      className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.98] text-white min-h-[2.1em]"
+      aria-label="Crispy, Juicy Legendary Food. BURAK Restaurant Kasur"
     >
-      {/* Line 1: White Bold Brand Hook */}
-      <span className="text-white inline-block">
-        {line1 || "\u00A0"}
+      <span className="block text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
+        {line1}
+        {isTypingLine1 && (
+          <span
+            className="inline-block w-1.5 sm:w-2 h-[0.85em] bg-amber-400 ml-1.5 align-middle animate-pulse"
+            aria-hidden="true"
+          />
+        )}
       </span>
 
-      {/* Cursor on Line 1 while typing */}
-      {isTypingLine1 && (
-        <span
-          className="inline-block w-[3px] sm:w-[4px] h-[0.8em] bg-amber-400 ml-1.5 animate-pulse align-middle shadow-[0_0_10px_rgba(251,191,36,0.9)] rounded-xs"
-          aria-hidden="true"
-        />
-      )}
-
-      <br />
-
-      {/* Line 2: Radiant Gradient Animated Tagline */}
-      <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-brand-yellow to-brand-pink min-h-[1.1em]">
-        {line2 || "\u00A0"}
+      <span className="block mt-1 sm:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-yellow-300 drop-shadow-[0_4px_24px_rgba(245,158,11,0.5)]">
+        {line2}
+        {!isTypingLine1 && (
+          <span
+            className="inline-block w-1.5 sm:w-2 h-[0.85em] bg-red-500 ml-1.5 align-middle animate-pulse"
+            aria-hidden="true"
+          />
+        )}
       </span>
-
-      {/* Cursor on Line 2 while typing / paused */}
-      {!isTypingLine1 && (
-        <span
-          className="inline-block w-[3px] sm:w-[4px] h-[0.8em] bg-brand-pink ml-1.5 animate-pulse align-middle shadow-[0_0_12px_rgba(255,51,102,0.95)] rounded-xs"
-          aria-hidden="true"
-        />
-      )}
     </h1>
   );
 }

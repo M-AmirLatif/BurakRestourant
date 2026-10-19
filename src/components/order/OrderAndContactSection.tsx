@@ -3,7 +3,7 @@
 import React from "react";
 import { BUSINESS_INFO } from "@/data/menuData";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { StarMotif, SunburstBadge } from "@/components/brand/BrandMotifs";
+import { StarMotif } from "@/components/brand/BrandMotifs";
 import {
   Phone,
   MessageSquare,
@@ -14,14 +14,15 @@ import {
   ShoppingBag,
   ExternalLink,
   Navigation,
-  ShieldCheck,
+  Car,
+  Users,
 } from "lucide-react";
 
 export function OrderAndContactSection() {
   const serviceBadges = [
-    { icon: Bike, label: "Home Delivery", desc: "Free on Rs 1,000+" },
-    { icon: ShoppingBag, label: "Takeaway", desc: "Piping hot in 15 mins" },
-    { icon: Utensils, label: "Dine-in", desc: "Cozy family atmosphere" },
+    { icon: Utensils, label: "Dine-in", desc: "Cozy modern ambiance & seating" },
+    { icon: ShoppingBag, label: "Takeaway", desc: "Piping hot in 15–20 mins" },
+    { icon: Bike, label: "Home Delivery", desc: "Free on Rs 1,000+ across Kasur" },
   ];
 
   return (
@@ -33,10 +34,10 @@ export function OrderAndContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeading
-          eyebrow="Easy Direct Ordering"
+          eyebrow="Easy Direct Ordering & Dine-In"
           title="Visit Us Or"
           highlight="Order to Your Door"
-          subtitle="Located at Bhatta Chowk, Kasur. Call us directly or place an instant WhatsApp order. Open late every night until 4:00 AM."
+          subtitle="Located near the Railway Crossing (Phatak) in Kasur. Call us directly or place an instant WhatsApp order for fast delivery."
         />
 
         {/* 3 Service Methods Banner */}
@@ -72,19 +73,19 @@ export function OrderAndContactSection() {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
                 <div>
                   <h3 className="font-display font-black text-2xl text-white tracking-tight">
-                    Quick Contacts & Info
+                    Quick Contacts & Location
                   </h3>
                   <p className="text-xs text-emerald-200/70 mt-0.5">
-                    Kasur fast delivery & inquiries
+                    BURAK Kasur fast delivery & table reservations
                   </p>
                 </div>
                 <span className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold shrink-0">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Open Till 4:00 AM
+                  Open For Dine-In & Delivery
                 </span>
               </div>
 
-              {/* Direct Call & WhatsApp Action Row - Compact Responsive 2-Column Grid */}
+              {/* Direct Call & WhatsApp Action Row */}
               <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5">
                 {/* Tap to Call */}
                 <a
@@ -101,18 +102,17 @@ export function OrderAndContactSection() {
                 {/* WhatsApp Chat */}
                 <a
                   href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(
-                    "Assalam o Alaikum Salato Food Hub! I want to check delivery options to my location in Kasur."
+                    "Assalam o Alaikum BURAK Restaurant! I want to check delivery options to my location in Kasur."
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 sm:py-3.5 px-2.5 sm:px-4 rounded-xl sm:rounded-2xl bg-brand-pink hover:bg-brand-pink-dark text-white font-display font-black text-xs sm:text-sm shadow-md shadow-brand-pink/30 hover:scale-[1.02] active:scale-[0.98] transition-all min-w-0"
+                  className="flex items-center justify-center gap-2 py-2.5 sm:py-3.5 px-2.5 sm:px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-red-600 to-brand-pink hover:opacity-90 text-white font-display font-black text-xs sm:text-sm shadow-md shadow-red-950/30 hover:scale-[1.02] active:scale-[0.98] transition-all min-w-0"
                 >
                   <MessageSquare className="w-4 h-4 shrink-0" />
                   <div className="text-left min-w-0">
-                    <span className="text-[9px] sm:text-[10px] uppercase font-extrabold block text-pink-200 leading-none">Instant Chat</span>
+                    <span className="text-[9px] sm:text-[10px] uppercase font-extrabold block text-red-200 leading-none">Instant Chat</span>
                     <span className="text-[11px] sm:text-sm font-black block leading-tight mt-0.5 whitespace-nowrap">
-                      <span className="sm:hidden">WhatsApp</span>
-                      <span className="hidden sm:inline">WhatsApp Order</span>
+                      WhatsApp Order
                     </span>
                   </div>
                 </a>
@@ -122,20 +122,24 @@ export function OrderAndContactSection() {
               <div className="p-4 rounded-2xl bg-brand-forest-dark/80 border border-brand-green/40 space-y-2">
                 <div className="flex items-center gap-2 text-amber-300 font-bold text-xs uppercase tracking-wider">
                   <Bike className="w-4 h-4 text-amber-400" />
-                  <span>Delivery Policy in Kasur</span>
+                  <span>BURAK Delivery & Dine-In Perks</span>
                 </div>
                 <ul className="text-xs sm:text-sm text-emerald-100/90 space-y-1">
                   <li className="flex items-center gap-2">
                     <StarMotif className="w-3.5 h-3.5 text-brand-yellow" />
-                    <span><strong>Free Home Delivery</strong> on all orders of Rs 1,000 or more.</span>
+                    <span><strong>Free Home Delivery</strong> on all orders of Rs 1,000 or more in Kasur.</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <StarMotif className="w-3.5 h-3.5 text-brand-yellow" />
-                    <span>Nominal Rs 100 delivery fee applies for orders under Rs 1,000.</span>
+                    <span>Average Delivery Time: <strong>25–40 minutes</strong> hot in thermal containers.</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <StarMotif className="w-3.5 h-3.5 text-brand-yellow" />
-                    <span>Average Delivery Time: <strong>30–45 minutes</strong> hot in thermal bags.</span>
+                    <span><strong>Plenty of Free Street Parking</strong> right outside the restaurant.</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <StarMotif className="w-3.5 h-3.5 text-brand-yellow" />
+                    <span>Casual, kid-friendly seating suitable for families and large groups.</span>
                   </li>
                 </ul>
               </div>
@@ -145,110 +149,71 @@ export function OrderAndContactSection() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
-                    <h5 className="font-display font-bold text-sm text-white">Restaurant Address</h5>
+                    <h5 className="font-display font-bold text-sm text-white">Restaurant Location</h5>
                     <p className="text-xs sm:text-sm text-emerald-200/80">
                       {BUSINESS_INFO.address}
                     </p>
+                    <p className="text-xs text-amber-300 font-mono mt-0.5">Google Plus Code: 4C8V+GPC, Kasur</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <h5 className="font-display font-bold text-sm text-white">Opening Hours</h5>
+                    <h5 className="font-display font-bold text-sm text-white">Dining & Delivery Hours</h5>
                     <p className="text-xs sm:text-sm text-emerald-200/80">
-                      Open Every Day: 12:00 PM – 4:00 AM (Late Night Service)
+                      Open Every Day • Lunch, Dinner & Evening Dining
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Bottom Guarantee Banner */}
-            <div className="pt-4 border-t border-brand-green/30 flex items-center justify-between text-xs text-emerald-300/80 font-medium">
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-amber-400" />
-                Dine-in, Takeout & Delivery Available
+            {/* Direct Directions Action Link */}
+            <div className="pt-4 border-t border-brand-green/30 flex items-center justify-between">
+              <span className="text-xs text-emerald-300/70">
+                Price: Rs 1,000–2,000 per person
               </span>
-              <span>Price Range: Rs 180 – 3,799</span>
+              <a
+                href={BUSINESS_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300"
+              >
+                <span>Open in Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
 
           </div>
 
-          {/* Right Stylized Interactive Map Card */}
-          <div className="lg:col-span-6 rounded-3xl bg-brand-forest/60 border border-brand-green/50 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+          {/* Right Column: Google Maps Embed & Location Visual */}
+          <div className="lg:col-span-6 rounded-3xl overflow-hidden border border-brand-green/50 shadow-2xl relative min-h-[380px] flex flex-col">
+            <iframe
+              title="BURAK Restaurant Kasur Location Map"
+              src="https://maps.google.com/maps?q=4C8V%2BGPC,+Kasur,+Pakistan&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              className="w-full flex-1 min-h-[350px] border-0 grayscale-[25%] contrast-[110%]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
             
-            <div className="space-y-4">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <h4 className="font-display font-black text-lg sm:text-xl text-white">
-                    Kasur City Location
-                  </h4>
-                  <p className="text-xs text-emerald-200/80 mt-0.5">
-                    Easily accessible landmark at Bhatta Chowk
-                  </p>
-                </div>
-                <a
-                  href={BUSINESS_INFO.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-yellow/20 hover:bg-brand-yellow/30 text-amber-300 text-xs font-bold border border-amber-400/40 transition-colors whitespace-nowrap self-start sm:self-auto shrink-0 shadow-sm"
-                >
-                  <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  <span>Open in Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                </a>
+            {/* Map Overlay Banner */}
+            <div className="p-4 bg-brand-forest-dark border-t border-brand-green/40 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <Navigation className="w-4 h-4 text-emerald-400" />
+                <span className="text-xs font-medium text-emerald-100">
+                  Near Railway Crossing (Phatak), Kasur
+                </span>
               </div>
-
-              {/* Embedded Interactive Styled Map Representation */}
-              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-brand-green/40 shadow-inner bg-brand-forest-dark flex items-center justify-center group">
-                
-                {/* Visual road map styled grid */}
-                <div
-                  className="absolute inset-0 opacity-25"
-                  style={{
-                    backgroundImage: `
-                      linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
-                    `,
-                    backgroundSize: "40px 40px",
-                  }}
-                />
-
-                {/* Road arterial line visuals */}
-                <div className="absolute w-full h-3 bg-amber-400/20 top-1/2 -translate-y-1/2 rotate-[-12deg]" />
-                <div className="absolute h-full w-3 bg-emerald-400/20 left-1/2 -translate-x-1/2 rotate-[25deg]" />
-
-                {/* Central Location Pin */}
-                <div className="relative z-10 flex flex-col items-center animate-bounce">
-                  <div className="p-3 rounded-full bg-brand-pink text-white shadow-2xl shadow-brand-pink/50 border-2 border-white">
-                    <MapPin className="w-6 h-6 fill-current text-white" />
-                  </div>
-                  <div className="mt-2 px-3 py-1 rounded-full bg-brand-forest-dark/95 border border-brand-yellow text-white text-xs font-display font-extrabold shadow-xl">
-                    Salato Food Hub
-                  </div>
-                </div>
-
-                {/* Distance Tags */}
-                <div className="absolute bottom-3 left-3 z-10 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-[11px] font-bold text-amber-300">
-                  📍 Bhatta Chowk, Kasur
-                </div>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-brand-forest-dark/70 border border-brand-green/30 flex items-center justify-between">
-                <div>
-                  <span className="text-xs font-bold text-white block">Heading over for Takeaway?</span>
-                  <span className="text-[11px] text-emerald-200/70">Call in advance to have your pizza fresh out of the oven!</span>
-                </div>
-                <a
-                  href={`tel:${BUSINESS_INFO.phone}`}
-                  className="px-3.5 py-1.5 rounded-full bg-brand-green hover:bg-brand-green-light text-white text-xs font-bold shrink-0 transition-colors"
-                >
-                  Call Now
-                </a>
-              </div>
+              <a
+                href={BUSINESS_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3.5 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-display font-bold text-xs transition-colors shadow-sm"
+              >
+                Get Directions
+              </a>
             </div>
-
           </div>
 
         </div>

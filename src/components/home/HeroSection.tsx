@@ -20,52 +20,54 @@ import {
   ShieldCheck,
   Bike,
   Star,
+  MapPin,
+  UtensilsCrossed,
 } from "lucide-react";
 
 const HERO_FEATURED_DISHES = [
   {
-    id: "special-salato",
-    tabLabel: "Pizza",
-    title: "Salato Special Pizza",
-    category: "Signature Masterpiece",
-    tagline: "4x meat blend, roasted garlic rim & bubbling mozzarella waterfall",
-    price: "From Rs 1,199",
-    badge: "Most Loved in Kasur",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900&auto=format&fit=crop&q=80",
+    id: "broast-quarter",
+    tabLabel: "Injected Broast",
+    title: "Quarter Injected Broast",
+    category: "Signature Crispy Chicken",
+    tagline: "Deep fried spicy injected chicken with crunchy crust, fries & garlic sauce",
+    price: "From Rs 650",
+    badge: "Crispy & Juicy",
+    image: "/images/menu_broast.png",
+    prepTime: "15-20 mins",
+  },
+  {
+    id: "pizza-special-buraq",
+    tabLabel: "Special Pizza",
+    title: "Special Buraq Pizza",
+    category: "Signature Wood-fired Pizza",
+    tagline: "Grilled chicken, seekh kabab, olives, mushrooms, jalapenos & sweet corn",
+    price: "From Rs 750",
+    badge: "Buraq Special",
+    image: "/images/menu_pizza.png",
+    prepTime: "20 mins",
+  },
+  {
+    id: "burger-mighty-bite",
+    tabLabel: "Zinger Burger",
+    title: "Mighty Bite Zinger",
+    category: "Double Stack Burger",
+    tagline: "Double crispy chicken zinger fillets stacked with cheese slices & spicy sauce",
+    price: "Only Rs 700",
+    badge: "Double Monster",
+    image: "/images/menu_burger.png",
+    prepTime: "15 mins",
+  },
+  {
+    id: "bbq-burak-platter",
+    tabLabel: "Bar B.Q",
+    title: "Burak BBQ Platter",
+    category: "Charcoal Grill Feast",
+    tagline: "Tikka boti, malai boti, chicken & beef kababs, sheesh tok & fresh chutney",
+    price: "Only Rs 1,700",
+    badge: "Grand Desi Feast",
+    image: "/images/menu_bbq.png",
     prepTime: "20-25 mins",
-  },
-  {
-    id: "burger-zinger",
-    tabLabel: "Zinger",
-    title: "Crispy Mighty Zinger",
-    category: "Fresh Hot Crunch",
-    tagline: "Double-coated tender chicken fillet tossed in secret spicy marinade",
-    price: "Only Rs 380",
-    badge: "Crispy Sensation",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&auto=format&fit=crop&q=80",
-    prepTime: "15 mins",
-  },
-  {
-    id: "shawarma-special-platter",
-    tabLabel: "Shawarma",
-    title: "Special Platter Shawarma",
-    category: "Middle-Eastern Feast",
-    tagline: "Shaved spit-roasted spiced chicken, garlic toum, crispy fries & warm pita",
-    price: "Only Rs 750",
-    badge: "Platter Feast",
-    image: "https://images.unsplash.com/photo-1561651823-34feb02250e4?w=900&auto=format&fit=crop&q=80",
-    prepTime: "15 mins",
-  },
-  {
-    id: "fries-salato-special",
-    tabLabel: "Loaded Fries",
-    title: "Salato Special Loaded Fries",
-    category: "Late Night Indulgence",
-    tagline: "Golden potato spears loaded with chicken chunks, cheese dip & jalapeños",
-    price: "Only Rs 750",
-    badge: "Customer Obsession",
-    image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=900&auto=format&fit=crop&q=80",
-    prepTime: "12 mins",
   },
 ];
 
@@ -99,9 +101,9 @@ export function HeroSection() {
     >
       {/* Background Ambience & Lighting */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-brand-green/20 rounded-full blur-[140px]" />
-        <div className="absolute top-1/3 -right-20 w-[450px] h-[450px] bg-brand-pink/15 rounded-full blur-[150px]" />
-        <div className="absolute -bottom-20 left-10 w-[400px] h-[400px] bg-brand-yellow/15 rounded-full blur-[130px]" />
+        <div className="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-red-600/15 rounded-full blur-[140px]" />
+        <div className="absolute top-1/3 -right-20 w-[450px] h-[450px] bg-amber-500/15 rounded-full blur-[150px]" />
+        <div className="absolute -bottom-20 left-10 w-[400px] h-[400px] bg-brand-forest/30 rounded-full blur-[130px]" />
       </div>
 
       {/* Main Hero Container */}
@@ -118,7 +120,7 @@ export function HeroSection() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
               </span>
               <span className="font-display font-bold text-xs uppercase tracking-wider text-amber-300">
-                Bhatta Chowk, Kasur • Open Late Till 4:00 AM
+                Near Railway Crossing (Phatak), Kasur • Dine-In & Delivery
               </span>
               <StarMotif className="w-3.5 h-3.5 text-brand-yellow hidden sm:inline" />
             </div>
@@ -128,7 +130,7 @@ export function HeroSection() {
 
             {/* Sub-headline */}
             <p className="text-base sm:text-lg md:text-xl text-emerald-100/90 max-w-2xl font-normal leading-relaxed">
-              Kasur&apos;s ultimate fast-food destination. From blistering hot Tikka pizzas to golden Zingers and midnight Shawarma platters, we feed your late-night hunger with authentic street-food soul.
+              Kasur&apos;s celebrated dining destination. Savor our signature spicy Injected Broast, wood-fired Pizzas, juicy Beef Smash Burgers, live charcoal Bar B.Q, and royal Mandi Pulao in a calm, modern vibe.
             </p>
 
             {/* Primary Action Buttons - Symmetric Architectural Console */}
@@ -136,21 +138,21 @@ export function HeroSection() {
               {/* WhatsApp Quick Order - Primary Hero Action */}
               <a
                 href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(
-                  "Assalam o Alaikum Salato Food Hub! I want to place an order from your website."
+                  "Assalam o Alaikum BURAK Restaurant! I want to place an order from your website."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full flex items-center justify-between gap-2.5 sm:gap-3 px-3.5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-brand-pink via-brand-pink-dark to-brand-pink hover:bg-brand-pink-dark text-white border border-white/25 shadow-xl shadow-brand-pink/40 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer"
+                className="group w-full flex items-center justify-between gap-2.5 sm:gap-3 px-3.5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-red-600 via-brand-pink to-amber-500 hover:opacity-95 text-white border border-white/25 shadow-xl shadow-red-950/40 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer"
               >
                 <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
                   <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-sm">
                     <PhoneCall className="w-3.5 h-3.5 text-white fill-current" />
                   </div>
                   <span className="font-display font-extrabold text-white text-xs sm:text-base tracking-wide whitespace-nowrap">
-                    Order on WhatsApp
+                    Order on WhatsApp / Call
                   </span>
                 </div>
-                <span className="shrink-0 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white text-brand-pink font-display font-black text-[11px] sm:text-xs tracking-wider shadow-sm">
+                <span className="shrink-0 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white text-red-600 font-display font-black text-[11px] sm:text-xs tracking-wider shadow-sm">
                   {BUSINESS_INFO.phoneFormatted}
                 </span>
               </a>
@@ -162,17 +164,17 @@ export function HeroSection() {
                   href="#menu"
                   className="h-11 sm:h-12 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 rounded-full bg-brand-forest-light/80 hover:bg-brand-forest-light text-white font-display font-bold text-xs sm:text-sm border border-brand-green/50 hover:border-amber-400/60 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center whitespace-nowrap"
                 >
-                  <span>Explore Menu</span>
+                  <span>Explore 15+ Categories</span>
                   <ArrowRight className="w-3.5 h-3.5 text-amber-300 shrink-0" />
                 </a>
 
-                {/* Jumbo Deals CTA */}
+                {/* Ramadan Buffet & Deals CTA */}
                 <a
                   href="#deals"
                   className="h-11 sm:h-12 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 rounded-full bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 font-display font-bold text-xs sm:text-sm border border-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center whitespace-nowrap"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-brand-yellow shrink-0" />
-                  <span>10+ Value Deals</span>
+                  <span>Buffet & Deals</span>
                 </a>
               </div>
             </div>
@@ -181,24 +183,24 @@ export function HeroSection() {
             <div className="pt-4 grid grid-cols-3 gap-2 sm:gap-6 border-t border-brand-green/30 w-full max-w-xl">
               <div className="flex flex-col items-center lg:items-start">
                 <div className="flex items-center gap-1 text-amber-400 font-display font-black text-xl sm:text-2xl">
-                  <span>4.2</span>
+                  <span>{BUSINESS_INFO.rating}</span>
                   <Star className="w-4 h-4 fill-current text-brand-yellow" />
                 </div>
-                <span className="text-xs text-emerald-200/80 font-medium">61+ Reviews</span>
+                <span className="text-xs text-emerald-200/80 font-medium">{BUSINESS_INFO.reviewCount}+ Google Reviews</span>
               </div>
 
               <div className="flex flex-col items-center lg:items-start border-x border-brand-green/30 px-2 sm:px-4">
                 <div className="flex items-center gap-1 text-white font-display font-black text-xl sm:text-2xl">
                   <span>FREE</span>
                 </div>
-                <span className="text-xs text-emerald-200/80 font-medium">Home Delivery &gt;Rs1000</span>
+                <span className="text-xs text-emerald-200/80 font-medium">Delivery &gt;Rs 1,000</span>
               </div>
 
               <div className="flex flex-col items-center lg:items-start">
                 <div className="flex items-center gap-1 text-brand-yellow-bright font-display font-black text-xl sm:text-2xl">
-                  <span>4:00 AM</span>
+                  <span>DINE-IN</span>
                 </div>
-                <span className="text-xs text-emerald-200/80 font-medium">Open Late Daily</span>
+                <span className="text-xs text-emerald-200/80 font-medium">Modern Ambiance</span>
               </div>
             </div>
 
@@ -208,7 +210,7 @@ export function HeroSection() {
           <div className="lg:col-span-5 relative flex flex-col items-center">
             
             {/* Radial glow background frame */}
-            <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-full p-4 sm:p-6 bg-gradient-to-tr from-brand-forest-light/60 via-brand-forest/40 to-brand-pink/20 border border-brand-yellow/30 shadow-2xl shadow-brand-forest-dark flex items-center justify-center group">
+            <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-full p-4 sm:p-6 bg-gradient-to-tr from-brand-forest-light/60 via-brand-forest/40 to-red-600/20 border border-brand-yellow/30 shadow-2xl shadow-brand-forest-dark flex items-center justify-center group">
               
               {/* Outer rotating decorative dashes */}
               <div className="absolute inset-2 sm:inset-3 rounded-full border-2 border-dashed border-amber-400/30 animate-[spin_40s_linear_infinite] pointer-events-none" />
@@ -231,7 +233,7 @@ export function HeroSection() {
 
                 {/* Floating Dish Badge */}
                 <div className="absolute top-5 sm:top-7 inset-x-0 flex justify-center z-10">
-                  <span className="px-3.5 py-1 rounded-full bg-brand-pink text-white font-display font-bold text-xs shadow-md border border-white/20 whitespace-nowrap">
+                  <span className="px-3.5 py-1 rounded-full bg-gradient-to-r from-red-600 to-brand-pink text-white font-display font-bold text-xs shadow-md border border-white/20 whitespace-nowrap">
                     {activeDish.badge}
                   </span>
                 </div>
@@ -265,7 +267,7 @@ export function HeroSection() {
                   onClick={() => setActiveDishIndex(idx)}
                   className={`px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
                     activeDishIndex === idx
-                      ? "bg-brand-pink text-white shadow-md scale-105"
+                      ? "bg-red-600 text-white shadow-md scale-105"
                       : "text-emerald-200/70 hover:text-white hover:bg-brand-forest"
                   }`}
                   aria-label={`View ${dish.title}`}

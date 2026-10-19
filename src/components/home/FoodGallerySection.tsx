@@ -1,68 +1,65 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { StarMotif, SunburstBadge } from "@/components/brand/BrandMotifs";
-import { Sparkles, Eye, Flame, Heart } from "lucide-react";
+import { StarMotif } from "@/components/brand/BrandMotifs";
 
 const GALLERY_ITEMS = [
   {
-    title: "Salato Crown Crust Pizza",
-    category: "Gold Pizza Series",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900&auto=format&fit=crop&q=80",
-    badge: "Royalty Favorite",
-    tag: "Pocket Stuffed Crust",
+    title: "Burak Dining Hall & Neon Decor",
+    category: "Restaurant Ambiance",
+    image: "/images/ambiance_2.jpg",
+    badge: "Modern Vibe",
+    tag: "Spacious & Clean Seating",
   },
   {
-    title: "Crispy Mighty Zinger",
-    category: "Burgers",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&auto=format&fit=crop&q=80",
-    badge: "Kasur #1 Crisp",
-    tag: "Double Golden Fillet",
+    title: "Comfortable Family Dining Space",
+    category: "Interior & Crowd",
+    image: "/images/ambiance_1.jpg",
+    badge: "Family Friendly",
+    tag: "Quiet Atmosphere",
   },
   {
-    title: "Special Platter Shawarma",
-    category: "Shawarma Feast",
-    image: "https://images.unsplash.com/photo-1561651823-34feb02250e4?w=900&auto=format&fit=crop&q=80",
-    badge: "Platter Feast",
-    tag: "Spiced Chicken & Garlic Toum",
+    title: "Lively Evening Diners & Vibe",
+    category: "Kasur Food Scene",
+    image: "/images/ambiance_3.jpg",
+    badge: "Top Choice",
+    tag: "Easy Street Parking",
   },
   {
-    title: "Salato Special Loaded Fries",
-    category: "Late Night Cravings",
-    image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=900&auto=format&fit=crop&q=80",
-    badge: "Molten Cheese",
-    tag: "Chicken & Jalapeño Sauce",
+    title: "Crispy Spicy Injected Broast",
+    category: "Injected Broast",
+    image: "/images/menu_broast.png",
+    badge: "Crispy & Juicy",
+    tag: "With Garlic Dip & Golden Fries",
   },
   {
-    title: "Sizzling Hot Wings (10 pcs)",
-    category: "Starters",
-    image: "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=900&auto=format&fit=crop&q=80",
-    badge: "Fiery Buffalo",
-    tag: "Crispy Golden Coating",
+    title: "Seekh Kebab Crust & Wood-fired Pizzas",
+    category: "Pizza Specials",
+    image: "/images/menu_pizza.png",
+    badge: "Stuffed Crust",
+    tag: "Overloaded Mozzarella Cheese",
   },
   {
-    title: "Baked Salato Special Pasta",
-    category: "Italian Fusion",
-    image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=900&auto=format&fit=crop&q=80",
-    badge: "House Pink Sauce",
-    tag: "Overloaded Mozzarella Melt",
+    title: "Smoky Bar B.Q & Mandi Pulao",
+    category: "Desi Charcoal Feast",
+    image: "/images/menu_bbq.png",
+    badge: "Desi Heritage",
+    tag: "Tikka, Kabab & Malai Boti",
   },
 ];
 
 export function FoodGallerySection() {
-  const [activePhoto, setActivePhoto] = useState<string | null>(null);
-
   return (
-    <section id="gallery" className="relative py-16 sm:py-24 bg-brand-forest-dark border-t border-brand-green/30" aria-label="Food Showcase">
+    <section id="gallery" className="relative py-16 sm:py-24 bg-brand-forest-dark border-t border-brand-green/30" aria-label="Food and Ambiance Showcase">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeading
-          eyebrow="Visual Feast"
+          eyebrow="Visual Ambiance & Menu"
           title="From Our"
-          highlight="Sizzling Kitchen"
-          subtitle="Real, mouthwatering snapshots of what awaits your plate at Bhatta Chowk, Kasur. Fresh ingredients, high heat, and uncompromising taste."
+          highlight="Kitchen & Dining Hall"
+          subtitle="Explore the lively modern interior, cozy seating, and mouthwatering culinary creations at BURAK Crispy Juicy Legendary in Kasur."
         />
 
         {/* Gallery Grid */}
@@ -87,7 +84,7 @@ export function FoodGallerySection() {
 
               {/* Top Pill */}
               <div className="absolute top-4 left-4 z-10">
-                <span className="px-3 py-1 rounded-full bg-brand-pink text-white font-display font-black text-xs shadow-md uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-full bg-red-600 text-white font-display font-black text-xs shadow-md uppercase tracking-wider">
                   {item.badge}
                 </span>
               </div>

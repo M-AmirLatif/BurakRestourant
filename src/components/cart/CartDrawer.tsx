@@ -28,33 +28,42 @@ import {
 // Top bestseller quick adds shown when cart is empty
 const QUICK_ADD_FAVORITES = [
   {
-    id: "classic-tikka-S",
-    menuItemId: "classic-tikka",
-    name: "Tikka Pizza",
+    id: "broast-quarter",
+    menuItemId: "broast-quarter",
+    name: "Quarter Injected Broast",
+    price: 650,
+    category: "broast",
+    badge: "Bestseller",
+    image: "/images/menu_broast.png",
+  },
+  {
+    id: "pizza-chicken-tikka-S",
+    menuItemId: "pizza-chicken-tikka",
+    name: "Chicken Tikka Pizza",
     sizeLabel: "S",
     sizeName: "Small",
-    price: 550,
+    price: 650,
     category: "pizza",
-    badge: "Bestseller",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80",
+    badge: "Top Pizza",
+    image: "/images/menu_pizza.png",
   },
   {
     id: "burger-zinger",
     menuItemId: "burger-zinger",
-    name: "Crispy Mighty Zinger",
-    price: 380,
+    name: "Zinger Burger",
+    price: 450,
     category: "burger",
-    badge: "Kasur #1",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
+    badge: "Kasur Crisp",
+    image: "/images/menu_burger.png",
   },
   {
-    id: "fries-salato-special",
-    menuItemId: "fries-salato-special",
-    name: "Salato Special Fries",
-    price: 750,
+    id: "fries-loaded",
+    menuItemId: "fries-loaded",
+    name: "Loaded Fries",
+    price: 550,
     category: "fries",
     badge: "Loaded Dip",
-    image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=800&auto=format&fit=crop&q=80",
+    image: "/images/menu_fries.png",
   },
 ];
 
@@ -302,7 +311,7 @@ export function CartDrawer() {
                   </div>
                   <div className="flex items-center gap-2 text-emerald-300">
                     <PhoneCall className="w-4 h-4 text-brand-pink shrink-0" />
-                    <span>Direct Call Helpline: 0321-7170063</span>
+                    <span>Direct Call Helpline: {BUSINESS_INFO.phoneFormatted}</span>
                   </div>
                 </div>
 
@@ -339,9 +348,9 @@ export function CartDrawer() {
 
                   <button
                     type="button"
-                    onClick={() => setOrderType("dine-in")}
+                    onClick={() => setOrderType("dinein")}
                     className={`py-2 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                      orderType === "dine-in"
+                      orderType === "dinein"
                         ? "bg-brand-green text-white shadow-md font-extrabold"
                         : "text-emerald-200/70 hover:text-white"
                     }`}
@@ -523,7 +532,7 @@ export function CartDrawer() {
               </button>
 
               <div className="flex items-center justify-between text-[11px] text-emerald-200/70 pt-1">
-                <span>Direct WhatsApp: 0321-7170063</span>
+                <span>Direct WhatsApp: {BUSINESS_INFO.phoneFormatted}</span>
                 <a
                   href={`tel:${BUSINESS_INFO.phone}`}
                   className="text-amber-300 font-semibold hover:underline"

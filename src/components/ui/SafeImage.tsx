@@ -29,7 +29,7 @@ export function SafeImage({
   const catKey = (category || "").toLowerCase();
 
   const renderFallbackSvg = () => {
-    const titleText = fallbackTitle || alt || "Salato Food Hub";
+    const titleText = fallbackTitle || alt || "BURAK Restaurant";
 
     // Pizza categories
     if (catKey.includes("pizza") || catKey.includes("pie") || catKey.includes("tikka")) {
@@ -352,7 +352,7 @@ export function SafeImage({
         </div>
         <div className="relative z-10 mt-2">
           <span className="px-2.5 py-0.5 rounded-full bg-brand-forest-dark/90 border border-brand-yellow/40 text-[10px] font-display font-extrabold text-amber-300 uppercase tracking-wider shadow-sm">
-            {catKey.includes("deal") ? "Salato Value Feast Deal" : "Salato Special"}
+            {catKey.includes("deal") ? "BURAK Value Feast Deal" : "BURAK Special"}
           </span>
         </div>
       </div>
@@ -371,7 +371,7 @@ export function SafeImage({
     <div className={`relative overflow-hidden w-full h-full ${className}`}>
       <Image
         src={src}
-        alt={alt || "Salato Food Hub Menu Item"}
+        alt={alt || "BURAK Restaurant Menu Item"}
         fill={fill}
         width={!fill ? width : undefined}
         height={!fill ? height : undefined}

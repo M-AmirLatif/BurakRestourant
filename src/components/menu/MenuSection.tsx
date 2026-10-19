@@ -55,7 +55,7 @@ export function MenuSection() {
           eyebrow="Crafted Fresh in Kasur"
           title="Explore Our"
           highlight="Complete Menu"
-          subtitle="All items transcribed directly from our authentic kitchen menu. Select your favorite size and add directly to your WhatsApp order basket."
+          subtitle="All items transcribed directly from BURAK restaurant printed menu cards. Select your favorite portion and add directly to your WhatsApp order basket."
         />
 
         {/* Search & Filter Toolbar */}
@@ -68,7 +68,7 @@ export function MenuSection() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search dishes... e.g. Tikka, Zinger, Shawarma, Wings, Fries"
+              placeholder="Search dishes... e.g. Broast, Tikka Pizza, Handi, Karahi, Zinger, BBQ"
               className="w-full pl-11 pr-10 py-3 rounded-full bg-brand-forest/70 border border-brand-green/40 text-white placeholder-emerald-200/50 text-sm focus:border-amber-400 focus:bg-brand-forest transition-all"
             />
             {searchQuery && (

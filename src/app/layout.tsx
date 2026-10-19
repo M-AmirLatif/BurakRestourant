@@ -1,57 +1,44 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { BUSINESS_INFO } from "@/data/menuData";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  weight: ["500", "600", "700", "800", "900"],
-  display: "swap",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
 export const viewport: Viewport = {
-  themeColor: "#0b2e17",
+  themeColor: "#06190e",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
 
 export const metadata: Metadata = {
-  title: "Salato Food Hub | Bhatta Chowk, Kasur — Delightful Taste With Trust",
+  title: "BURAK Crispy Juicy Legendary | Kasur, Pakistan",
   description:
-    "Award-winning fast food & artisan pizza in Kasur. Signature Tikka Pizzas, Crown Crust, crispy Zinger Burgers, Shawarmas, and Family Deals. Open late until 4 AM! Free home delivery on Rs 1000+. Call 0321-7170063.",
+    "BURAK Crispy Juicy Legendary located near Railway Crossing (Phatak), Kasur. Signature Injected Broast, Wood-fired Pizzas, Beef Smash Burgers, Mandi Pulao, and Bar B.Q. Dine-in, Takeaway & Free Delivery on Rs 1,000+. Call 0322 1711222.",
   keywords: [
-    "Salato Food Hub",
+    "BURAK Restaurant Kasur",
+    "BURAK Crispy Juicy Legendary",
+    "Railway Crossing Kasur food",
+    "Best Broast in Kasur",
+    "Injected broast Kasur",
     "Pizza Kasur",
-    "Bhatta Chowk Kasur restaurant",
-    "Best Zinger burger Kasur",
-    "Late night food Kasur 4 AM",
-    "Shawarma Kasur",
-    "Fast food Kasur delivery",
-    "Jumbo Family Deal Kasur",
+    "Kasur restaurant dine-in",
+    "Mandi Pulao Kasur",
+    "BBQ Kasur",
+    "0322 1711222",
   ],
-  authors: [{ name: "Salato Food Hub" }],
+  authors: [{ name: "BURAK Crispy Juicy Legendary" }],
   openGraph: {
-    title: "Salato Food Hub — Delightful Taste With Trust",
+    title: "BURAK Crispy Juicy Legendary — Kasur",
     description:
-      "Kasur's favorite late-night food spot at Bhatta Chowk. Open daily until 4:00 AM. Free delivery over Rs 1000. Phone: 0321-7170063.",
-    url: "https://salatofoodhub.pk",
-    siteName: "Salato Food Hub",
+      "Kasur's celebrated dining destination near Railway Crossing (Phatak). Modern ambiance, Injected Broast, Pizzas, Burgers & Bar B.Q. Delivery: 0322 1711222.",
+    url: "https://burakrestaurant.pk",
+    siteName: "BURAK Crispy Juicy Legendary",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&auto=format&fit=crop&q=80",
+        url: "/images/burak_cover.png",
         width: 1200,
         height: 630,
-        alt: "Salato Food Hub Signature Pizza & Fast Food",
+        alt: "BURAK Crispy Juicy Legendary Kasur",
       },
     ],
     locale: "en_PK",
@@ -59,9 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Salato Food Hub Kasur | Open until 4 AM",
-    description: "Famous Pizzas, Burgers & Shawarmas at Bhatta Chowk, Kasur. Call 0321-7170063.",
-    images: ["https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&auto=format&fit=crop&q=80"],
+    title: "BURAK Crispy Juicy Legendary Kasur",
+    description: "Famous Injected Broast, Pizzas, Burgers & Bar B.Q in Kasur. Call 0322 1711222.",
+    images: ["/images/burak_cover.png"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -70,15 +57,15 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "FastFoodRestaurant",
+  "@type": "Restaurant",
   "name": BUSINESS_INFO.name,
-  "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&auto=format&fit=crop&q=80",
-  "telephone": "+923217170063",
-  "servesCuisine": ["Pizza", "Fast Food", "Burgers", "Shawarma", "Pakistani Street Food"],
-  "priceRange": "PKR 180 - 3799",
+  "image": "/images/burak_cover.png",
+  "telephone": "+923221711222",
+  "servesCuisine": ["Fast Food", "Pizza", "Broast", "Burgers", "Pakistani Food", "Barbecue", "Mandi Pulao"],
+  "priceRange": "PKR 1000 - 2000",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bhatta Goryanwala, Bhatta Chowk",
+    "streetAddress": "Near Railway Crossing (Phatak), 4C8V+GPC",
     "addressLocality": "Kasur",
     "addressRegion": "Punjab",
     "addressCountry": "PK",
@@ -88,26 +75,10 @@ const jsonLd = {
     "latitude": "31.1156",
     "longitude": "74.4500",
   },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      "opens": "12:00",
-      "closes": "04:00",
-    },
-  ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.2",
-    "reviewCount": "61",
+    "ratingValue": "3.9",
+    "reviewCount": "39",
   },
   "potentialAction": {
     "@type": "OrderAction",
@@ -132,9 +103,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${plusJakartaSans.variable} scroll-smooth antialiased`}
+      className="scroll-smooth antialiased"
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

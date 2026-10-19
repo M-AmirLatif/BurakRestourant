@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { SalatoLogoBadge, StarMotif } from "@/components/brand/BrandMotifs";
+import { BurakLogoBadge, StarMotif } from "@/components/brand/BrandMotifs";
 import { useCart } from "@/context/CartContext";
 import { BUSINESS_INFO } from "@/data/menuData";
 import {
@@ -30,9 +30,9 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Menu", href: "#menu" },
-    { label: "Deals", href: "#deals", badge: "Hot" },
+    { label: "Deals & Buffet", href: "#deals", badge: "Hot" },
     { label: "Story", href: "#about" },
-    { label: "Gallery", href: "#gallery" },
+    { label: "Ambiance", href: "#gallery" },
     { label: "Location", href: "#contact" },
   ];
 
@@ -50,9 +50,9 @@ export function Navbar() {
           <a
             href="#"
             className="flex items-center focus-visible:ring-2 focus-visible:ring-amber-400 rounded-2xl min-w-0 outline-none"
-            aria-label="Salato Food Hub Homepage"
+            aria-label="BURAK Crispy Juicy Legendary Homepage"
           >
-            <SalatoLogoBadge size={isScrolled ? "small" : "default"} />
+            <BurakLogoBadge size={isScrolled ? "small" : "default"} />
           </a>
 
           {/* Desktop Navigation Links */}
@@ -65,7 +65,7 @@ export function Navbar() {
               >
                 <span className="whitespace-nowrap">{link.label}</span>
                 {link.badge && (
-                  <span className="px-1.5 py-0.5 rounded-full bg-brand-pink text-[9px] xl:text-[10px] font-extrabold text-white tracking-wider animate-pulse shrink-0">
+                  <span className="px-1.5 py-0.5 rounded-full bg-red-600 text-[9px] xl:text-[10px] font-extrabold text-white tracking-wider animate-pulse shrink-0">
                     {link.badge}
                   </span>
                 )}
@@ -81,7 +81,7 @@ export function Navbar() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
-              <span>Open till 4 AM</span>
+              <span>Dine-In & Delivery</span>
             </div>
 
             {/* Quick Call Button (Desktop) */}
@@ -96,91 +96,66 @@ export function Navbar() {
             {/* Cart Trigger Button */}
             <button
               onClick={() => setIsOpen(true)}
-              className="relative flex items-center gap-2 px-3.5 py-2 rounded-full bg-gradient-to-r from-brand-pink to-brand-pink-dark hover:from-brand-pink-dark hover:to-brand-pink text-white font-display font-bold text-xs sm:text-sm shadow-lg shadow-brand-pink/30 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              className="relative flex items-center gap-2 px-3.5 py-2 rounded-full bg-gradient-to-r from-red-600 via-brand-pink to-amber-500 hover:opacity-95 text-white font-display font-bold text-xs sm:text-sm shadow-lg shadow-red-950/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
               aria-label={`View Basket with ${totalCount} items`}
             >
-              <ShoppingBag className="w-4 h-4 text-white" />
-              <span className="hidden sm:inline">Basket</span>
+              <ShoppingBag className="w-4 h-4 shrink-0" />
+              <span className="hidden sm:inline font-extrabold">Basket</span>
               {totalCount > 0 && (
-                <span className="flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-black bg-brand-yellow text-brand-dark-text rounded-full shadow-inner animate-bounce">
+                <span className="px-1.5 py-0.5 rounded-full bg-brand-yellow text-brand-dark-text text-[11px] font-black leading-none shadow-sm">
                   {totalCount}
                 </span>
               )}
-              {totalCount > 0 && subtotal > 0 && (
-                <span className="hidden md:inline font-mono font-semibold text-xs border-l border-white/20 pl-2">
-                  Rs {subtotal.toLocaleString()}
-                </span>
-              )}
             </button>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl bg-brand-forest border border-brand-green/40 text-emerald-100 hover:text-white"
-              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={isMobileMenuOpen}
+              className="lg:hidden p-2 rounded-full bg-brand-forest-dark border border-brand-green/40 text-emerald-200 hover:text-white cursor-pointer"
+              aria-label="Toggle Navigation Menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-amber-300" />
-              ) : (
-                <MenuIcon className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Drawer Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-brand-forest-dark/98 border-b border-brand-green/30 backdrop-blur-xl px-4 pt-4 pb-6 mt-2 space-y-3 shadow-2xl animate-in slide-in-from-top-4 duration-200">
-          <div className="flex items-center justify-between p-3 rounded-2xl bg-brand-forest/60 border border-brand-green/30">
-            <div className="flex items-center gap-2 text-xs text-emerald-300 font-semibold">
-              <Clock className="w-4 h-4 text-amber-400" />
-              <span>Open Daily: 12 PM – 4:00 AM</span>
-            </div>
-            <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold">
-              🟢 LIVE
-            </span>
-          </div>
-
-          <div className="space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-between p-3 rounded-xl text-base font-bold text-white hover:bg-brand-green/30 transition-all border border-transparent hover:border-brand-green/30"
-              >
-                <span className="flex items-center gap-2">
-                  <StarMotif className="w-3.5 h-3.5 text-brand-yellow" />
-                  {link.label}
-                </span>
-                {link.badge ? (
-                  <span className="px-2 py-0.5 rounded-full bg-brand-pink text-[11px] font-extrabold text-white">
-                    {link.badge}
+        {/* Mobile Dropdown Menu Drawer */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden mt-3 p-4 rounded-3xl bg-brand-forest-dark/95 border border-brand-green/50 backdrop-blur-xl shadow-2xl space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
+            <nav className="flex flex-col space-y-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between p-3 rounded-2xl text-sm font-semibold text-white hover:bg-brand-forest transition-colors"
+                >
+                  <span className="flex items-center gap-2">
+                    <StarMotif className="w-3 h-3 text-amber-400" />
+                    <span>{link.label}</span>
                   </span>
-                ) : (
-                  <ChevronRight className="w-4 h-4 text-emerald-400" />
-                )}
-              </a>
-            ))}
-          </div>
+                  {link.badge && (
+                    <span className="px-2 py-0.5 rounded-full bg-red-600 text-[10px] font-black text-white">
+                      {link.badge}
+                    </span>
+                  )}
+                </a>
+              ))}
+            </nav>
 
-          <div className="pt-2 border-t border-brand-green/30 flex flex-col gap-2">
-            <a
-              href={`tel:${BUSINESS_INFO.phone}`}
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-yellow text-brand-dark-text font-display font-extrabold text-sm shadow-md"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Direct Call: {BUSINESS_INFO.phoneFormatted}</span>
-            </a>
-            <div className="flex items-center justify-center gap-1.5 text-xs text-emerald-200/70 pt-1">
-              <MapPin className="w-3.5 h-3.5 text-amber-400" />
-              <span>{BUSINESS_INFO.address}</span>
+            <div className="pt-3 border-t border-brand-green/30 flex items-center justify-between text-xs text-emerald-200/80">
+              <a
+                href={`tel:${BUSINESS_INFO.phone}`}
+                className="flex items-center gap-1.5 text-amber-300 font-bold"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call: {BUSINESS_INFO.phoneFormatted}</span>
+              </a>
+              <span className="text-emerald-400 font-semibold">Near Railway Phatak</span>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }

@@ -5,7 +5,7 @@ import confetti from "canvas-confetti";
 import { BUSINESS_INFO } from "@/data/menuData";
 
 export interface CartItem {
-  id: string; // unique cart entry id (e.g. "classic-tikka-L" or "deal-1")
+  id: string; // unique item id + size, e.g. "pizza-tikka-M"
   menuItemId: string;
   name: string;
   sizeLabel?: string;
@@ -16,23 +16,24 @@ export interface CartItem {
   isDeal?: boolean;
 }
 
+export type OrderType = "delivery" | "takeaway" | "dinein";
+
 interface CartContextType {
   items: CartItem[];
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
-  addItem: (item: Omit<CartItem, "quantity">, quantity?: number) => void;
+  addItem: (item: Omit<CartItem, "quantity">) => void;
   removeItem: (id: string) => void;
   updateQuantity: (id: string, delta: number) => void;
   clearCart: () => void;
   totalCount: number;
   subtotal: number;
   deliveryFee: number;
-  freeDeliveryThreshold: number;
   isFreeDelivery: boolean;
   amountNeededForFreeDelivery: number;
   totalPayable: number;
-  orderType: "delivery" | "takeaway" | "dine-in";
-  setOrderType: (type: "delivery" | "takeaway" | "dine-in") => void;
+  orderType: OrderType;
+  setOrderType: (type: OrderType) => void;
   customerName: string;
   setCustomerName: (name: string) => void;
   customerAddress: string;
@@ -41,51 +42,57 @@ interface CartContextType {
   setCustomerPhone: (phone: string) => void;
   orderNotes: string;
   setOrderNotes: (notes: string) => void;
-  getWhatsAppOrderUrl: () => string;
   triggerCheckout: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+const CART_STORAGE_KEY = "burak_cart_v1";
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [orderType, setOrderType] = useState<"delivery" | "takeaway" | "dine-in">("delivery");
+  const [orderType, setOrderType] = useState<OrderType>("delivery");
   const [customerName, setCustomerName] = useState("");
   const [customerAddress, setCustomerAddress] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
   const [orderNotes, setOrderNotes] = useState("");
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  // Load from local storage
+  // Load from localStorage on mount
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("salato_cart");
-      if (saved) {
-        setItems(JSON.parse(saved));
+      const stored = localStorage.getItem(CART_STORAGE_KEY);
+      if (stored) {
+        setItems(JSON.parse(stored));
       }
     } catch {
       // ignore
+    } finally {
+      setIsHydrated(true);
     }
   }, []);
 
-  // Save to local storage
+  // Sync to localStorage
   useEffect(() => {
-    try {
-      localStorage.setItem("salato_cart", JSON.stringify(items));
-    } catch {
-      // ignore
+    if (isHydrated) {
+      try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      } catch {
+        // ignore
+      }
     }
-  }, [items]);
+  }, [items, isHydrated]);
 
-  const addItem = (item: Omit<CartItem, "quantity">, quantity = 1) => {
+  const addItem = (newItem: Omit<CartItem, "quantity">) => {
     setItems((prev) => {
-      const existing = prev.find((i) => i.id === item.id);
+      const existing = prev.find((i) => i.id === newItem.id);
       if (existing) {
         return prev.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity + quantity } : i
+          i.id === newItem.id ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
-      return [...prev, { ...item, quantity }];
+      return [...prev, { ...newItem, quantity: 1 }];
     });
 
     // Delightful micro-interaction
@@ -94,7 +101,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         particleCount: 28,
         spread: 45,
         origin: { y: 0.85, x: 0.88 },
-        colors: ["#1A6E3B", "#E11D74", "#F59E0B"],
+        colors: ["#DC2626", "#F59E0B", "#10B981"],
       });
     } catch {
       // ignore
@@ -133,10 +140,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const totalPayable = subtotal + deliveryFee;
 
   const getWhatsAppOrderUrl = () => {
-    let text = `🌟 *NEW ORDER — SALATO FOOD HUB* 🌟\n`;
+    let text = `🔥 *NEW ORDER — BURAK CRISPY JUICY LEGENDARY* 🔥\n`;
     text += `_"${BUSINESS_INFO.tagline}"_\n`;
+    text += `📍 Near Railway Crossing (Phatak), Kasur\n`;
     text += `----------------------------------------\n`;
-    text += `📍 *Order Type*: ${orderType.toUpperCase()}\n`;
+    text += `🍽️ *Order Type*: ${orderType.toUpperCase()}\n`;
     if (customerName.trim()) text += `👤 *Customer*: ${customerName.trim()}\n`;
     if (customerPhone.trim()) text += `📞 *Phone*: ${customerPhone.trim()}\n`;
     if (orderType === "delivery" && customerAddress.trim()) {
@@ -153,32 +161,23 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     text += `----------------------------------------\n`;
     text += `💰 *Subtotal*: Rs ${subtotal.toLocaleString()}\n`;
     if (orderType === "delivery") {
-      text += `🚚 *Delivery*: ${isFreeDelivery ? "FREE (Promotion applied)" : `Rs ${deliveryFee}`}\n`;
+      text += `🚚 *Delivery*: ${isFreeDelivery ? "FREE (Orders Rs 1000+)" : `Rs ${deliveryFee}`}\n`;
     }
     text += `🔥 *TOTAL PAYABLE*: *Rs ${totalPayable.toLocaleString()}*\n`;
     text += `----------------------------------------\n`;
 
     if (orderNotes.trim()) {
-      text += `📝 *Special Instructions*: ${orderNotes.trim()}\n\n`;
+      text += `📝 *Notes*: ${orderNotes.trim()}\n`;
     }
 
-    text += `⚡ _Sent from Salato Food Hub Web Order System_\n`;
-    text += `_Please confirm order preparation and ETA!_`;
+    text += `\nThank you for choosing BURAK Restaurant Kasur! Please confirm receipt of my order.`;
 
-    return `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(text)}`;
+    const encoded = encodeURIComponent(text);
+    return `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encoded}`;
   };
 
   const triggerCheckout = () => {
-    try {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ["#1A6E3B", "#E11D74", "#F59E0B", "#DC2626"],
-      });
-    } catch {
-      // ignore
-    }
+    if (items.length === 0) return;
     const url = getWhatsAppOrderUrl();
     window.open(url, "_blank");
   };
@@ -196,7 +195,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         totalCount,
         subtotal,
         deliveryFee,
-        freeDeliveryThreshold,
         isFreeDelivery,
         amountNeededForFreeDelivery,
         totalPayable,
@@ -210,7 +208,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         setCustomerPhone,
         orderNotes,
         setOrderNotes,
-        getWhatsAppOrderUrl,
         triggerCheckout,
       }}
     >

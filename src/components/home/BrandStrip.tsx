@@ -11,36 +11,40 @@ import {
   HeartHandshake,
   MapPin,
   Star,
+  Users,
+  Car,
+  UtensilsCrossed,
+  Flame,
 } from "lucide-react";
 
 export function BrandStrip() {
   const trustPillars = [
     {
-      icon: Clock,
-      title: "Open Daily Till 4:00 AM",
-      desc: "Kasur's midnight hunger hero. Freshly baked pizzas, loaded fries & sizzling zingers whenever late-night cravings hit.",
-      badge: "Midnight Savior",
+      icon: Flame,
+      title: "Signature Injected Broast",
+      desc: "Our renowned marinated chicken injected with signature spicy rub, fried golden and extra crispy on the outside, succulent and juicy on the inside.",
+      badge: "Kasur Crispy Legend",
+      color: "border-red-500/40 text-red-400",
+    },
+    {
+      icon: UtensilsCrossed,
+      title: "Family Dine-In & Modern Vibe",
+      desc: "Relatively calm and comfortable dining environment with modern cafe aesthetics, perfect for friends and family gatherings away from city rush.",
+      badge: "Modern Ambiance",
       color: "border-amber-400/40 text-amber-300",
     },
     {
       icon: Bike,
-      title: "Free Delivery over Rs 1,000",
-      desc: "Lightning fast, temperature-insulated home delivery across Bhatta Chowk and surrounding Kasur neighborhoods.",
-      badge: "Fast & Steaming",
+      title: "Delivery & Takeaway (0322 1711222)",
+      desc: "Free home delivery across Kasur on orders of Rs 1,000+. Piping hot packing ensures your broast, burgers, and handis arrive fresh.",
+      badge: "Piping Hot Delivery",
       color: "border-emerald-400/40 text-emerald-300",
     },
     {
-      icon: ShieldCheck,
-      title: "Handcrafted Dough & Kasur Spices",
-      desc: "We knead our pizza dough fresh every morning and season our meats with authentic secret desi spice rubs.",
-      badge: "100% Fresh Daily",
-      color: "border-brand-pink/40 text-pink-300",
-    },
-    {
-      icon: Award,
-      title: "4.2★ Google Rating (61+ Reviews)",
-      desc: "Beloved by local families and night owls for generous cheese layers, honest prices, and friendly service.",
-      badge: "Trusted Quality",
+      icon: Car,
+      title: "Free Street Parking & Kid-Friendly",
+      desc: "Convenient location near Railway Crossing (Phatak) Kasur with plenty of street parking space, wheelchair accessibility, and child-friendly seating.",
+      badge: "Ample Parking",
       color: "border-yellow-400/40 text-yellow-300",
     },
   ];
@@ -49,12 +53,12 @@ export function BrandStrip() {
     <section
       id="about"
       className="relative py-16 sm:py-24 bg-brand-forest-dark border-y border-brand-green/30 overflow-hidden"
-      aria-label="About Salato Food Hub"
+      aria-label="About BURAK Crispy Juicy Legendary"
     >
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-10 right-10 w-96 h-96 bg-brand-green/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-brand-pink/15 rounded-full blur-[100px]" />
+        <div className="absolute top-10 right-10 w-96 h-96 bg-red-600/15 rounded-full blur-[120px]" />
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-amber-500/15 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +69,7 @@ export function BrandStrip() {
           {/* Subtle watermark logo pattern */}
           <div className="absolute -right-10 -bottom-10 opacity-5 pointer-events-none select-none">
             <span className="font-display font-black text-[180px] leading-none text-white">
-              SALATO
+              BURAK
             </span>
           </div>
 
@@ -75,93 +79,64 @@ export function BrandStrip() {
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-forest-light/60 border border-amber-400/30">
                 <StarMotif className="w-3.5 h-3.5 text-brand-yellow" />
                 <span className="font-display font-extrabold text-xs uppercase tracking-wider text-amber-300">
-                  Our Kasur Heritage & Passion
+                  Kasur&apos;s Modern Culinary Landmark
                 </span>
               </div>
 
               <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
-                Authentic Taste, Handcrafted With{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-brand-yellow to-brand-pink">
-                  Unmatched Trust.
+                BURAK: Crispy, Juicy,{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-yellow-300">
+                  Legendary Taste.
                 </span>
               </h2>
 
               <p className="text-base sm:text-lg text-emerald-100/90 leading-relaxed">
-                Born at <strong className="text-amber-300 font-bold">Bhatta Chowk, Kasur</strong>, Salato Food Hub is on a mission to redefine fast-casual dining. We marry sizzling local desi marinades with four-cheese indulgence, hand-tossed artisan dough, and a warm neighborhood welcome.
+                Located near the <strong className="text-amber-300 font-bold">Railway Crossing (Phatak) in Kasur</strong>, BURAK brings a vibrant modern vibe and culinary excellence to the city. Whether you crave our signature injected crispy broast, wood-fired stuffed crust pizzas, charcoal Bar B.Q, or savory clay-pot handis, every plate is crafted to perfection.
               </p>
 
               <p className="text-base text-emerald-100/80 leading-relaxed">
-                Whether you&apos;re sharing a Jumbo Family Deal with loved ones at home or grabbing a midnight 3:30 AM Zinger with friends, every order is crafted hot to order under strict hygiene standards.
+                With a comfortable, well-lit interior, calm seating, friendly staff, and ample free parking, BURAK is the top choice for family get-togethers, celebrations, and late evening dining.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-forest-dark/80 border border-brand-green/40">
                   <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
                   <span className="text-xs font-semibold text-emerald-200">
-                    Bhatta Goryanwala, Kasur City
+                    {BUSINESS_INFO.shortAddress}
                   </span>
                 </div>
+
                 <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-forest-dark/80 border border-brand-green/40">
-                  <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <Award className="w-4 h-4 text-amber-400 shrink-0" />
                   <span className="text-xs font-semibold text-emerald-200">
-                    12:00 PM – 4:00 AM (7 Days a Week)
+                    {BUSINESS_INFO.priceRange}
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Visual Photo Collage on the Right */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border-2 border-brand-yellow/30 shadow-2xl bg-brand-forest-dark">
+            {/* Right Image Feature: Real Ambiance Photo */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-amber-400/40 shadow-2xl group">
                 <SafeImage
-                  src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900&auto=format&fit=crop&q=80"
-                  alt="Salato Food Hub Fresh Pizza in Kasur"
-                  category="pizza"
-                  fallbackTitle="Salato Gold Pizza Series"
+                  src="/images/ambiance_2.jpg"
+                  alt="BURAK Restaurant Kasur Modern Interior Ambiance"
+                  category="ambiance"
                   fill
-                  sizes="(max-width: 768px) 100vw, 450px"
-                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2 z-10">
-                  <div className="min-w-0">
-                    <span className="text-[10px] uppercase font-bold text-amber-300 block">Fresh Oven Bake</span>
-                    <p className="text-sm font-display font-black text-white truncate">Salato Gold Pizza Series</p>
-                  </div>
-                  <SunburstBadge className="bg-brand-pink text-white text-[10px] shrink-0">
-                    HOT & CHEESY
-                  </SunburstBadge>
-                </div>
-              </div>
-
-              {/* Verified Google Reviews Trust Card - Full Width Symmetrical Alignment */}
-              <div className="w-full mt-4 rounded-2xl bg-gradient-to-r from-brand-forest-dark via-brand-forest to-brand-forest-dark border border-brand-green/60 p-3 sm:p-3.5 px-3.5 sm:px-5 shadow-xl backdrop-blur-md flex items-center justify-between gap-2.5 sm:gap-3">
-                <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
-                  {/* Rating Score Badge */}
-                  <div className="flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 text-brand-dark-text font-display font-black text-xs sm:text-base shadow-sm shrink-0">
-                    <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current text-brand-dark-text" />
-                    <span>4.2</span>
-                  </div>
-
-                  {/* Stars & Label (Single-line on mobile, no wrapping) */}
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-0.5 sm:gap-1 text-amber-400 mb-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current" />
-                      ))}
-                    </div>
-                    <span className="text-[11px] sm:text-xs font-display font-bold text-white block truncate whitespace-nowrap">
-                      <span className="sm:hidden">61+ Google Ratings</span>
-                      <span className="hidden sm:inline">61+ Verified Google Ratings</span>
-                    </span>
-                  </div>
-                </div>
-
-                {/* Local Verified Trust Pill */}
-                <div className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-brand-forest-dark/80 border border-brand-green/50 text-[10px] sm:text-xs font-bold text-emerald-200 shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="hidden sm:inline">Kasur Verified</span>
-                  <span className="sm:hidden">Verified</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <span className="px-3 py-1 rounded-full bg-red-600 text-white font-display font-black text-xs uppercase tracking-wider inline-block mb-1 shadow-md">
+                    Dine-In Ambiance
+                  </span>
+                  <h4 className="font-display font-black text-lg text-white">
+                    Modern Greenery & Neon Vibes
+                  </h4>
+                  <p className="text-xs text-emerald-200/90">
+                    Comfortable family dining near Kasur Railway Crossing
+                  </p>
                 </div>
               </div>
             </div>
@@ -169,30 +144,30 @@ export function BrandStrip() {
           </div>
         </div>
 
-        {/* 4 Trust Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {trustPillars.map((pillar) => {
+        {/* 4 Trust Pillars */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {trustPillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
               <div
-                key={pillar.title}
-                className="group relative rounded-2xl bg-brand-forest/60 border border-brand-green/40 p-6 hover:border-amber-400/50 hover:bg-brand-forest-light/50 transition-all duration-300 flex flex-col justify-between hover:scale-[1.02]"
+                key={idx}
+                className="p-6 rounded-3xl bg-brand-forest/60 border border-brand-green/40 shadow-lg flex flex-col justify-between space-y-4 hover:border-amber-400/50 transition-all hover:-translate-y-1"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 rounded-xl bg-brand-forest-dark/80 border border-brand-green/40 group-hover:scale-110 transition-transform">
-                      <Icon className="w-6 h-6 text-amber-400" />
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="p-3 rounded-2xl bg-brand-forest-dark border border-brand-green/40 text-amber-400">
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <span className="px-2.5 py-0.5 rounded-full bg-brand-forest-dark border border-brand-green/40 text-[10px] font-bold text-amber-300">
+                    <span className="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-brand-forest-light/70 text-emerald-300 border border-brand-green/40">
                       {pillar.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-display font-extrabold text-lg text-white mb-2 group-hover:text-amber-300 transition-colors">
+                  <h3 className="font-display font-black text-lg text-white">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-emerald-100/70 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-emerald-100/80 leading-relaxed">
                     {pillar.desc}
                   </p>
                 </div>
